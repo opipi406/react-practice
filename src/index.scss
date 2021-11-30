@@ -1,0 +1,68 @@
+$size-block: 42px;
+$size-stone: $size-block * .8;
+$color-block-border: #1d1d1d;
+$color-block-hover: #ffb2b2;
+
+
+body {
+    font-family: "Century Gothic", Futura, sans-serif;
+
+    margin: 20px;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+}
+
+.board {
+    margin: 40px 0 0 40px;
+
+    &__block {
+        font-size: $size-stone;
+        font-weight: bold;
+
+        float: left;
+
+        width: $size-block;
+        height: $size-block;
+        line-height: $size-block;
+        margin-top: -1px;
+        margin-right: -1px;
+        padding: 0;
+
+        text-align: center;
+
+        border: 1.5px solid $color-block-border;
+        background: #008000;
+
+        &--white{
+            color: white;
+        }
+        &--black{
+            color: black;
+        }
+        &--puttable{
+            background: #b3ff27;
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            background: $color-block-hover;
+        }
+    }
+}
+
+.board-row:after {
+    display: table;
+    clear: both;
+
+    content: "";
+}
+
+.info-view {
+    font-size: 24px;
+
+    margin-left: 40px;
+}
